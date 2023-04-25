@@ -7,6 +7,7 @@ const OrderForm = ({ addOrder }) => {
   const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
 
   const handleIngredientChange = useCallback(e => {
+    e.preventDefault()
     const ingredient = e.target.name;
     if (ingredients.includes(ingredient)) {
       setIngredients(prevIngredients => prevIngredients.filter(i => i !== ingredient));

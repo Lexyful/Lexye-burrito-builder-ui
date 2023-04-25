@@ -11,15 +11,17 @@ function App() {
   
 const getOrders = () => {
     return fetch('http://localhost:3001/api/v1/orders')
-        
-        .then(response => response.json())
-        .then(data => setOrders(data.orders))
+    .then(response =>  {
+      return response.json()
+  })
   }
 
   
   useEffect(() => {
     getOrders()
-
+    .then((data) => {
+      return setOrders(data.orders);
+    })
   }, []);
 
 
